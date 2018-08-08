@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+25.times do
+  Flat.create!(
+    name: "#{Faker::HitchhikersGuideToTheGalaxy.location} in #{Faker::Address.community}",
+    address: Faker::Address.full_address,
+    description: Faker::HitchhikersGuideToTheGalaxy.quote,
+    price_per_night: (rand()*300).to_i + 1,
+    number_of_guests: (rand()*10).to_i + 1
+  )
+end
