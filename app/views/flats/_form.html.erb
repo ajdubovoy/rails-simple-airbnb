@@ -1,0 +1,27 @@
+<%= simple_form_for(@flat) do |f| %>
+  <% if @flat.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @flat.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :description, as: :text %>
+  </div>
+
+  <div class="form-inputs form-inline">
+    <%= f.input :price_per_night, as: :integer %>
+    <%= f.input :number_of_guests, as: :integer %>
+  </div>
+
+  <br>
+
+   <div class="form-actions text-center">
+    <%= f.button :submit %>
+  </div>
+<% end %>

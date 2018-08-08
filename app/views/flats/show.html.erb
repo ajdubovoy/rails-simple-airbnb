@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <h1><%= @flat.name %> 🏡</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <p>📖 <em><%= @flat.description %></em></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <p><%= @flat.address %> 📍</p>
+      <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@flat.address.split(" ").join("+")}&size=600x300" %>
+    </div>
+
+    <div class="col-sm-6">
+      <p>💶 <%= @flat.price_per_night %> 👨‍👩‍👧‍👧 <%= @flat.number_of_guests %></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-3">
+      <%= link_to "Edit", edit_flat_path(@flat), class: "btn btn-warning btn-lg pull-left" %>
+    </div>
+    <div class="col-sm-3">
+      <%= link_to "Delete", flat_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-lg" %>
+    </div>
+    <div class="col-sm-6">
+      <%= link_to "Go back", flats_path, class: "btn btn-primary btn-lg pull-right" %>
+    </div>
+  </div>
+</div>
+</div>

@@ -12,6 +12,7 @@
     address: Faker::Address.full_address,
     description: Faker::HitchhikersGuideToTheGalaxy.quote,
     price_per_night: (rand()*300).to_i + 1,
-    number_of_guests: (rand()*10).to_i + 1
+    number_of_guests: (rand()*10).to_i + 1,
+    image_url: 'https://picsum.photos/200/300?image=' + (rand() * 30).to_i.to_s
   )
 end

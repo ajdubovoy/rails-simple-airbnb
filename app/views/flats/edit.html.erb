@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <h1>Edit Flat: <%= @flat.name %> 🏡</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-9">
+      <%= render 'form' %>
+    </div>
+  </div>
+  <%= link_to "Go back", flats_path, class: "btn btn-primary btn-lg pull-right" %>
+</div>
+</div>
