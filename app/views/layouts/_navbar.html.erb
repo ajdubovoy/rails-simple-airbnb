@@ -9,6 +9,10 @@
 
     <!-- Links -->
     <%= link_to "Add Flat", new_flat_path, class: "btn btn-primary" %>
-
+  <%= form_tag(search_flats_path) do %>
+    <%= text_field_tag :term, @search %>
+    <%= submit_tag 'Search', class: 'btn btn-default' %>
+  <% end %>
+  </div>
   </div>
 </div>

@@ -1,6 +1,5 @@
 class FlatsController < ApplicationController
   before_action :find_flat, only: [:show, :edit, :update, :destroy]
-
   def index
     @flats = Flat.all
     @count = Flat.count
@@ -23,6 +22,12 @@ class FlatsController < ApplicationController
   end
 
   def edit; end
+
+  def search
+    @flats = Flat.where("name LIKE '%#{params[:term]}%'")
+    @count = Flat.where("name LIKE '%#{params[:term]}%'").length
+    @search = params[:term]
+  end
 
   def update
     if @flat.update(flat_params)
